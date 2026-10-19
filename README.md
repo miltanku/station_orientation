@@ -6,13 +6,13 @@ Results are organized by seismic network, station, and validity interval.
 
 ## Browse the catalog
 
-- [English catalog](docs/index.html)
-- [日本語版カタログ](docs/ja/index.html)
+- [English catalog](https://miltanku.github.io/station_orientation/)
+- [Japanese catalog / 日本語版](https://miltanku.github.io/station_orientation/ja/)
 
 The catalog includes station- and network-level CSV files, summary PDFs,
 results without screening where available, and annual orientation maps.
 Scientific definitions, quality-control notes, and citation information are
-provided on the [About page](docs/about/index.html).
+provided on the [About page](https://miltanku.github.io/station_orientation/about/).
 
 ## Language and review status
 
@@ -39,12 +39,12 @@ Station Orientation Catalogは，地震観測点の水平動成分について�
 
 ### カタログを閲覧する
 
-- [英語版カタログ](docs/index.html)
-- [日本語版カタログ](docs/ja/index.html)
+- [英語版カタログ](https://miltanku.github.io/station_orientation/)
+- [日本語版カタログ](https://miltanku.github.io/station_orientation/ja/)
 
 観測点別・ネットワーク別CSV，サマリーPDF，利用可能な場合はscreeningなしの
 結果，および年別方位マップを収録しています．科学的定義，品質管理上の注意，
-引用情報については，[Aboutページ](docs/ja/about/index.html)を参照してください．
+引用情報については，[Aboutページ](https://miltanku.github.io/station_orientation/ja/about/)を参照してください．
 
 ### 言語と校正状況
 

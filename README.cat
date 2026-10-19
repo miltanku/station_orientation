@@ -3,6 +3,8 @@
 This catalog provides station orientation correction estimates for individual seismic stations. Each row represents one time interval during which a single orientation correction is considered valid. Stations with changes in their estimated orientation are represented by multiple rows.
 The start_time and end_time columns define the validity interval of each estimate in UTC. Times are given in ISO 8601 format and rounded to the nearest second. Orientation corrections and their uncertainties are given in degrees and rounded to one decimal place.
 
+You can go to a catolog of station orientation by acecessing https://miltanku.github.io/station_orientation/.  
+
 Column definitions:
 network: Seismic network code.
 station: Station code.
