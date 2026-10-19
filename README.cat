@@ -1,0 +1,221 @@
+## Description
+
+This catalog provides station orientation correction estimates for individual seismic stations. Each row represents one time interval during which a single orientation correction is considered valid. Stations with changes in their estimated orientation are represented by multiple rows.
+The start_time and end_time columns define the validity interval of each estimate in UTC. Times are given in ISO 8601 format and rounded to the nearest second. Orientation corrections and their uncertainties are given in degrees and rounded to one decimal place.
+
+Column definitions:
+network: Seismic network code.
+station: Station code.
+start_time: Start of the validity interval in UTC.
+end_time: End of the validity interval in UTC.
+correction_deg: Median station orientation correction in degrees.
+std_deg: Standard deviation of the orientation estimates in degrees.
+stderr_deg: Standard error of the median orientation correction in degrees.
+n: Number of measurements used to estimate the orientation correction.
+error_flag: 0 or 1
+    Indicator of a possible observation error. A value of 1 indicates that
+    std_deg exceeds 15 degrees, whereas a value of 0 indicates that std_deg
+    is 15 degrees or less. This flag identifies potentially unreliable
+    estimates but does not necessarily indicate a confirmed observation error.
+    We screened arrinval angle measurements showing unexpected linear trends 
+    for the back-azimuth, but only automatic process cannot completely remove 
+    such data. 
+
+Notes:
+1. Individual arrival angles of P-waves are measured by a methodology in Tarumi & Yoshizawa (2025, PAGEOPH).  
+2. Each validity interval is defined as start_time <= time < end_time, which was determined based on the event catalog (GCMT). 
+3. The orientation correction values are rounded for presentation. Calculations should be performed using the original unrounded values when available.
+4. The correction of $cmpaz is followed by ($cmpaz + correction_deg)
+
+Contact us: 
+Kotaro TARUMI @ ERI, UTokyo, Japan (2026.10)
+tarumi.kotaro.jp [at] gmail.com
+ktarumi [at] eri.u-tokyo.ac.jp
+
+References: 
+Tarumi, K., & Yoshizawa, K. (2026). A Comprehensive Catalog of Horizontal-Component Sensor Orientations at FDSN Stations, 1986 to 2025., SSJ Fall meeting 2026, in prep. for Seismca
+Tarumi, K., & Yoshizawa, K. (2025). Station-Orientation Catalog for Australian Broadband Seismic Stations. Pure and Applied Geophysics. https://doi.org/10.1007/s00024-025-03827-7
+
+** Noting 
+Replacement or Maintanance (including CHNM changes (BHN->BH1), battery exchange, new installation of other seismometer (00 10, ...etc) )
+
+* AU 
+- ARMA: unreported @ 2006~2007
+- ARPS: unreported @ 2024.7
+- BBOO: Replacement @ 2008.11 and @ 2023.7
+- BCON: include linear trend
+- BLDU: Replacement @ 2008.5 and @ 2024.8
+- BW1H: unreported @ 2021.11, @ 2022.10, and @ 2024.3
+- CNB: unreported @ 2014, Replacement @ 2020.6
+- COEN: unreported @ 2005.10, @ 2014, @ 2018 @ 2024, Replacement @ 2022.8
+- CTA: Replacement @ 2019.6 
+- EIDS: Replacement @ 2007.7 (1st partition linear trend)
+- FORT: Replacement @ 2011.1 and @ 2012.3 ??
+- HTT: Replacement @ 2023.4
+- KELC: unreported @ 2021.1
+- KMBL: Replacement @ 2016.11
+- KNRA: Replacement @ 2018.5 / 2nd partition have some issues ??
+- LHI: Mainatance @ 2008.4
+- MANU: Mainatance @ 2018.7
+- MILA: Replacement @ 2014.11, @ 2016.6, Mainatance @ 2018.10, Replacement @ 2019.8
+- MOO: Replacement @ 2007.1, unreported @ 2016
+- MULG: Replacement @ 2022.11
+- MUN: unreported @ 2023 & 1st partition linear trend 
+- NRFK: linear trend 
+- NFK: Replacement @ 2019.3
+- NWAO: Replacement @ 2019.1
+- PSA00: unreported @ 2025
+- PSAB1: unreported @ 2019
+- PSAC2: unreported @ 2020 and 2025
+- RIV: Replacement @ 2024.5
+- RKGY: unreported @ 2019.8, Mainatance @ 2021.3 and 2023.3
+- STKA: Mainatance @ 2003.11
+- WATNG: unreported 2023.3 
+- WB2: All unreported 
+- WRKA: Replacement @ 2019.4
+- YNG: Mainatance @ 2017.12, Replacement @ 2020.9
+
+* CN
+- BMSB: unreported @ 2010
+- DLBC: unreported @ 1999
+- FNBB: unreported @ 
+- GAC: Mainatance @ 2011.11
+- HNB: Replacement @ 2004.2
+- ICQ: unreported @ 2010.2 (Replacement @ 2007.4 ??)
+- INK: unreported @ 2011
+- LMN: unreported @ 2002, @ 2007, Mainatance @ 2014.10
+- LMQ: Mainatance @ 1997, unreported 1999
+- OZB: unreported @ 2001
+- SCHQ: unreported @ 1998
+- SHB: Replacement @ 2004.7
+- WALA: Replacement @ 2006.2
+- WHY: unreported @ 2007
+- YKW1: unreported @ 2004~2005
+- YKW4: unreported @ 1995
+
+* G
+- AIS: unreported at 2014~2015 (maybe 2013??)
+- CCD: Replacement @ 2010.2, Mainatance @ 2014.12, unreported @ 2017
+- DZM: unreported @ 2006
+- FOMA: Replacement @ 2017
+- GRC: Remained linear-trend (whole)
+- INU: unreported @ 2003
+- PEL: Mainatance @ 2002 ??
+- RER: Mainatance @ 1999~2001 ??, 2006.10, unreported @ 2013
+- TAM: During 2019, unreported & noisy
+- TAOE: unreported @ 2021, Replacement @ 2023.10
+
+* IC
+- HIA: Replacement @ 2013.5 ??
+- LSA: Replacement @ 2013(4).4
+- QIZ: Unknown errors @ 2008–2010 (2nd partition), Change random seed: 0 -> 100
+
+* II 
+- ABKT: Mainatance @ 2002 ?? and @ 2009.12
+- ALE: Mainatance @ 2014.5
+- ARU: Replacement @ 2009.9
+- ASCN: Replacement @ 2022.3
+- DGAR: Replacement @ 2022 (After it, noisy)
+- ERM: Mainatance @ 1994.3 (??), 2003.1 (??), 2006.8 (??)
+- KWAJ: Noisy?
+- MBAR: Mainatance @ 2001.10
+- MSEY: Mainatance @2003.1 and @ 2011.7
+- MSVF: Replacement @ 2013.11
+- OBN: Replacement @ 2022.3
+- PALK: unreported @ 2005, 2nd partition Noisy, Mainatance @ 2007.12 and @ 2014.3
+- RAYN: Replacement @ 2010.1
+- SACV: unreported @ 2004, Mainatance @ 2008, Replacement @ 2017.11
+- WRAB: unreported @ 2023, Mainatance @ 2024.5
+- XPFO: Replacement @ 2020.9 and 2021.10
+
+* IU
+- AFI: 2nd partition linear-trend
+- TIXI: Change random seed: 0 -> 100
+- BILL: 1st partition-> !! A little !! linear-trend 
+- CASY: Maintanance @ 2012.1
+- CHTO: Replacement @ 2006.3 ??
+- DAV: Noisy 
+- GNI: Mainatance @ 1996.11
+- GRFO: Replacement @ 2015.1
+- HNR: Replacement @ 2009.9 and Maintanance @ 2013.1
+- HRV: Maintanance @ 1996.12 and 2006.03
+- JOHN: Replacement @ 2010.8 && Unproper waveform data @ 1st partition
+- MA2: 1st partition-> !! A little !! linear-trend 
+- MAJO: Maintanance @ 2002.3 ?
+- MAKZ: Mainatance @ 1997.11 and @ 2010.9
+- MAJO: Mainatance @ 2016.1 ?
+- MIDW: Mainatance @ 2005.6
+- NWAO: Replacement @ 2001.9
+- PET: Mainatance @ 2014.8
+- PTCN: unreported 
+- PTGA: Mainatance @ 1999.4 or 2000.4
+- RCBR: Maintanance @ 2004.7 and @ 2009.7
+- SAML: Mainatances @ 2009~2010 
+- SDV: Replacement @ 2004.3
+- SPA: Replacement @ 1996.12 (Noisy waveform data ?) 
+- SSPA: Mainatance @ 2008.8
+- TATO: Replacement @ 2002.3
+- TEIG: 2nd & 3rd partition linear-trend, Replacement @ 2014.10
+- TIXI: Mainatance @ 1999.4 and @ 2004.10, unreported @ 2017, Replacement @ 2023.5
+- ULN: Mainatance @ 2013.9
+- WCI: Mainatance @ 2010.8
+- WVT: Mainatance @ 2011.1
+- XMAS: Mainatance @ 2007.6
+- YSS: Mainatance @ 2009 ~ 2013 ??
+
+* JP
+- JCJ: unreported @ 2023
+- JMZ: With somewhat errors in sensors (Watanabe & Takenaka, 2025, Zisin)
+- JSD: unreported @ 2016
+
+* PS
+- BAG: Mainatance @ 2006.2
+- PSI: unreported @ 1994
+
+* TA
+- 109C: Mainatance @ 2005.3~4
+- MDND: unreported @ 2012
+- S22A: unreported @ 2017
+- TIGA: Replacement @ 2015
+- W18A: unreported @ 2010
+ 
+* US 
+- AAM: Mainatance @ 2005.4
+- ACSO: Mainatance @ 2006.12 and @ 2021.3
+- AHID: Mainatance @ 2011.12 
+- AMTX: Mainatance @ 2012.4
+- BLA: Mainatance @ 2010.3 ??
+- CBN: unreported @ 2007
+- COWI: unreported @ 2009 (Mainatance @ 2010.8 ??)
+- ELK: Mainatance @ 2008.12, unreported @ 2010 (2nd partition linear trend) Replacement @ 2012.11
+- EYMN: Mainatance @ 2006.9, unreported @ 2007
+- GOGA: Mainatance @ 2005.2
+- HAWA: unreported @ 2002 (1st partition linear trend), Mainatance @ 2011.5
+- HWUT: Mainatance @ 2001.8, @ 2009.5, @ 2013.7
+- JFWS: Mainatance @ 2006.7
+- KSU1: Mainatance @ 2006.6~7
+- LAO: Mainatance @ 2008.1
+- LONY: Mainatance @ 2011.5
+- LRAL: Mainatance @ 2009.5
+- LTX: 1st partition problematic, Mainatance @ 2002.5, @ 2005.4 (??)
+- MCWV: Mainatance @ 2009.8
+- MNTX: Mainatance @ 2009.4
+- MSO: Mainatance @ 2009.4
+- PKME: unreported @ 2010, Mainatance @ 2011.5
+- SDCO: Mainatance @ 2006.6
+- TPNV: Mainatance @ 2009.10
+- TZTN: unreported @ 2008
+- WMOK: Mainatance @ 2005.12
+- WVOR: Mainatance @ 2005.4
+
+
+* YP
+- NE3B: linear trend  
+- NE4B: linear trend
+- NE7D: linear trend
+- NE88: linear trend
+- NE92: linear trend 
+- NE99: linear trend 
+- NE9A: linear trend 
+- NE9D: linear trend 
+- NEA9: linear trend 

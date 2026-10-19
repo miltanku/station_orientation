@@ -10,6 +10,7 @@
 !/README.md
 !/docs/
 !/docs/**
+!/README.cat
 
 # Local/editor metadata and Python files inside the public tree must remain
 # private even if they are accidentally copied there later.
