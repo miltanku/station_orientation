@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>About | Station Orientation Catalog</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/catalog.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="../index.html">Station Orientation Catalog</a>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../maps/index.html">Annual maps</a></li>
+          <li><a href="../networks/index.html">Networks</a></li>
+          <li><a href="index.html">About</a></li>
+        </ul>
+      </nav>
+      <nav class="language-tabs" aria-label="Language">
+        <a lang="en" hreflang="en" href="index.html" aria-current="page">English</a>
+        <a lang="ja" hreflang="ja" href="../ja/about/index.html">日本語</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" tabindex="-1">
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Home</a></li><li aria-current="page">About</li></ol></nav>
+  <header class="page-header"><p class="eyebrow">Documentation</p><h1>About this catalog</h1><p>Scientific definitions documented with the catalog are provided below. Unapproved publication metadata remains marked as unconfirmed.</p></header>
+  <section aria-labelledby="about-overview"><h2 id="about-overview">Overview</h2><p>This catalog provides horizontal-component station-orientation correction estimates for individual seismic stations. Each row represents one interval during which a single correction is considered valid. Stations with changes in estimated orientation are represented by multiple rows.</p></section>
+  <section aria-labelledby="about-methods"><h2 id="about-methods">Event-based measurement method</h2><p>The corrections are estimated on an event basis. P-wave arrival angles are measured for individual cataloged earthquakes and used to estimate station orientation. The arrival-angle measurements follow the method of Tarumi &amp; Yoshizawa (2025).</p></section>
+  <section aria-labelledby="about-validity"><h2 id="about-validity">Records and validity intervals</h2><p>Each estimate is valid for start_time ≤ time &lt; end_time. Validity intervals are determined using the GCMT event catalog. Times are expressed in UTC using ISO 8601.</p><p>In the presentation catalog, times are rounded to the nearest second and orientation corrections and uncertainties to 0.1 degree. Beside each station name, the catalog displays the median orientation correction x ± standard deviation σ in degrees, followed in parentheses by the number of events used for the estimate. Use the original unrounded values for calculations when they are available. Station-level source CSVs may retain their original field names and precision.</p></section>
+  <section aria-labelledby="about-columns"><h2 id="about-columns">Column definitions</h2><p>The table maps the normalized catalog fields defined in README.cat to the source fields retained by the current station and network downloads. error_flag is a derived field for the normalized catalog.</p><div class="table-wrap"><table><thead><tr><th scope="col">Published field</th><th scope="col">Station-source field</th><th scope="col">Meaning</th></tr></thead><tbody><tr><th scope="row"><code>network</code></th><td><code>—</code></td><td>Seismic network code</td></tr><tr><th scope="row"><code>station</code></th><td><code>—</code></td><td>Station code</td></tr><tr><th scope="row"><code>start_time</code></th><td><code>starttime</code></td><td>Start of the validity interval in UTC</td></tr><tr><th scope="row"><code>end_time</code></th><td><code>endtime</code></td><td>End of the validity interval in UTC; the endpoint is excluded</td></tr><tr><th scope="row"><code>correction_deg</code></th><td><code>median</code></td><td>Median station-orientation correction in degrees</td></tr><tr><th scope="row"><code>std_deg</code></th><td><code>std</code></td><td>Standard deviation of the orientation estimates in degrees</td></tr><tr><th scope="row"><code>stderr_deg</code></th><td><code>stderr</code></td><td>Standard error of the median correction in degrees</td></tr><tr><th scope="row"><code>n</code></th><td><code>ndata</code></td><td>Number of measurements used for the estimate</td></tr><tr><th scope="row"><code>error_flag</code></th><td><code>derived</code></td><td>1 when std_deg exceeds 15 degrees; otherwise 0</td></tr></tbody></table></div></section>
+  <section aria-labelledby="about-quality"><h2 id="about-quality">Quality control and error_flag</h2><p>error_flag is a screening indicator for a possible observation error; a value of 1 does not establish that an estimate is wrong. Measurements with unexpected linear trends in arrival angle against back-azimuth were screened automatically, but automatic processing may not remove all such data.</p></section>
+  <section aria-labelledby="about-application"><h2 id="about-application">Applying the correction</h2><p>Apply the correction as <code>$cmpaz_corrected = $cmpaz + correction_deg</code>.</p></section>
+  <section aria-labelledby="about-processing"><h2 id="about-processing">Station-specific processing note</h2><p>For IU.TIXI, the processing random seed was changed from 0 to 100.</p></section>
+  <section aria-labelledby="about-references"><h2 id="about-references">References and citation</h2><ol class="references">
+  <li>Tarumi, K., &amp; Yoshizawa, K. (2026). <cite>A Comprehensive Catalog of Horizontal-Component Sensor Orientations at FDSN Stations, 1986 to 2025.</cite> SSJ Fall Meeting 2026; manuscript in preparation.</li>
+  <li>Tarumi, K., &amp; Yoshizawa, K. (2025). <cite>Station-Orientation Catalog for Australian Broadband Seismic Stations.</cite> Pure and Applied Geophysics. <a href="https://doi.org/10.1007/s00024-025-03827-7">https://doi.org/10.1007/s00024-025-03827-7</a></li>
+</ol></section>
+  <section aria-labelledby="about-license"><h2 id="about-license">License</h2><p class="notice warning">To be confirmed before publication.</p></section>
+  <section aria-labelledby="about-contact"><h2 id="about-contact">Contact</h2><p class="notice warning">To be confirmed before publication.</p></section>
+  </main>
+  <footer class="site-footer">
+    <p>Snapshot: local-preview-pdf-dialog. Catalog validity dates are shown in the data records.</p>
+  </footer>
+  <dialog class="pdf-dialog" data-pdf-dialog aria-labelledby="pdf-dialog-title">
+    <div class="pdf-dialog__panel">
+      <div class="pdf-dialog__header">
+        <div>
+          <p class="eyebrow">Document preview</p>
+          <h2 id="pdf-dialog-title" data-pdf-dialog-title>PDF preview</h2>
+        </div>
+        <button class="pdf-dialog__close" type="button" data-pdf-dialog-close aria-label="Close PDF preview">×</button>
+      </div>
+      <p class="pdf-dialog__help">If the PDF does not appear below, open it in a separate tab.</p>
+      <div class="pdf-dialog__viewer">
+        <button class="pdf-dialog__nav pdf-dialog__nav--previous" type="button" data-pdf-dialog-previous aria-label="Previous station" title="Previous station" hidden><span aria-hidden="true">←</span></button>
+        <iframe class="pdf-dialog__frame" data-pdf-dialog-frame title="PDF preview"></iframe>
+        <button class="pdf-dialog__nav pdf-dialog__nav--next" type="button" data-pdf-dialog-next aria-label="Next station" title="Next station" hidden><span aria-hidden="true">→</span></button>
+      </div>
+      <div class="pdf-dialog__actions">
+        <span class="pdf-dialog__position" data-pdf-dialog-position aria-live="polite" hidden></span>
+        <a class="button" data-pdf-dialog-open target="_blank" rel="noopener">Open in a separate tab</a>
+        <a class="button secondary" data-pdf-dialog-download download>Download PDF</a>
+        <button class="button secondary" type="button" data-pdf-dialog-close>Close preview</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>

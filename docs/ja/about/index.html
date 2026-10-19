@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>概要 | Station Orientation Catalog</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <script src="../../js/catalog.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">本文へ移動</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="../index.html">Station Orientation Catalog</a>
+      <nav aria-label="主要ナビゲーション">
+        <ul>
+          <li><a href="../index.html">ホーム</a></li>
+          <li><a href="../maps/index.html">年別マップ</a></li>
+          <li><a href="../networks/index.html">ネットワーク</a></li>
+          <li><a href="index.html">概要</a></li>
+        </ul>
+      </nav>
+      <nav class="language-tabs" aria-label="言語">
+        <a lang="en" hreflang="en" href="../../about/index.html">English</a>
+        <a lang="ja" hreflang="ja" href="index.html" aria-current="page">日本語</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" tabindex="-1">
+  <nav class="breadcrumbs" aria-label="パンくずリスト"><ol><li><a href="../index.html">ホーム</a></li><li aria-current="page">概要</li></ol></nav>
+  <header class="page-header"><p class="eyebrow">ドキュメント</p><h1>このカタログについて</h1><p>カタログに付属する科学的定義を以下に掲載します．未承認の公開情報は未確定として明示します．</p></header>
+  <section aria-labelledby="about-overview"><h2 id="about-overview">概要</h2><p>このカタログは，個々の地震観測点について水平動成分の方位補正値を提供します．各行は，単一の方位補正値が有効とみなされる一つの期間を表します．推定方位が変化した観測点は複数行で表されます．</p></section>
+  <section aria-labelledby="about-methods"><h2 id="about-methods">イベントベースの計測方法</h2><p>方位補正値はイベントベースで推定されています．カタログ化された個々の地震に対してP波の到来角を計測し，その計測結果から観測点方位を推定します．P波到来角の計測にはTarumi &amp; Yoshizawa (2025)の手法を使用しています．</p></section>
+  <section aria-labelledby="about-validity"><h2 id="about-validity">レコードと有効期間</h2><p>start_time以上，end_time未満（start_time ≤ time &lt; end_time）を各推定値の有効期間とします．有効期間はGCMTイベントカタログに基づいて決定されています．時刻はUTCのISO 8601形式です．</p><p>提示用カタログでは時刻を最も近い秒に，方位補正値と不確実性を0.1度単位に丸めています．観測点名の横には，方位補正値の中央値 x ± 標準偏差 σ を度単位で表示し，その後の括弧内に推定に使用したイベント数を表示します．計算には，利用できる場合は元の丸めていない値を使用してください．観測点別の元CSVでは元のフィールド名と精度が保持される場合があります．</p></section>
+  <section aria-labelledby="about-columns"><h2 id="about-columns">列定義</h2><p>README.catで定義された標準化カタログのフィールドと，現在の観測点別・ネットワーク別ダウンロードで保持される元フィールドとの対応を示します．error_flagは標準化カタログ用の派生フィールドです．</p><div class="table-wrap"><table><thead><tr><th scope="col">公開用フィールド</th><th scope="col">観測点別CSVのフィールド</th><th scope="col">意味</th></tr></thead><tbody><tr><th scope="row"><code>network</code></th><td><code>—</code></td><td>地震観測ネットワークコード</td></tr><tr><th scope="row"><code>station</code></th><td><code>—</code></td><td>観測点コード</td></tr><tr><th scope="row"><code>start_time</code></th><td><code>starttime</code></td><td>有効期間の開始時刻（UTC）</td></tr><tr><th scope="row"><code>end_time</code></th><td><code>endtime</code></td><td>有効期間の終了時刻（UTC，期間には含まない）</td></tr><tr><th scope="row"><code>correction_deg</code></th><td><code>median</code></td><td>観測点方位補正値の中央値（度）</td></tr><tr><th scope="row"><code>std_deg</code></th><td><code>std</code></td><td>方位推定値の標準偏差（度）</td></tr><tr><th scope="row"><code>stderr_deg</code></th><td><code>stderr</code></td><td>方位補正値中央値の標準誤差（度）</td></tr><tr><th scope="row"><code>n</code></th><td><code>ndata</code></td><td>方位補正値の推定に使用した計測数</td></tr><tr><th scope="row"><code>error_flag</code></th><td><code>派生値</code></td><td>std_degが15度を超える場合は1，15度以下の場合は0</td></tr></tbody></table></div></section>
+  <section aria-labelledby="about-quality"><h2 id="about-quality">品質管理とerror_flag</h2><p>error_flagは観測誤差の可能性を示すスクリーニング指標です．1は推定値が確実に誤っていることを意味しません．到来角がバックアジマスに対して予期しない線形傾向を示す計測を自動的に除外していますが，自動処理だけでは該当データを完全に除去できない可能性があります．</p></section>
+  <section aria-labelledby="about-application"><h2 id="about-application">補正値の適用</h2><p>方位補正は，<code>$cmpaz_corrected = $cmpaz + correction_deg</code> として適用します．</p></section>
+  <section aria-labelledby="about-processing"><h2 id="about-processing">個別処理注記</h2><p>IU.TIXIについては，処理時の乱数シードを0から100へ変更しています．</p></section>
+  <section aria-labelledby="about-references"><h2 id="about-references">参考文献・引用</h2><ol class="references">
+  <li>Tarumi, K., &amp; Yoshizawa, K. (2026). <cite>A Comprehensive Catalog of Horizontal-Component Sensor Orientations at FDSN Stations, 1986 to 2025.</cite> SSJ Fall Meeting 2026; manuscript in preparation.</li>
+  <li>Tarumi, K., &amp; Yoshizawa, K. (2025). <cite>Station-Orientation Catalog for Australian Broadband Seismic Stations.</cite> Pure and Applied Geophysics. <a href="https://doi.org/10.1007/s00024-025-03827-7">https://doi.org/10.1007/s00024-025-03827-7</a></li>
+</ol></section>
+  <section aria-labelledby="about-license"><h2 id="about-license">ライセンス</h2><p class="notice warning">公開前に確定する必要があります．</p></section>
+  <section aria-labelledby="about-contact"><h2 id="about-contact">問い合わせ先</h2><p class="notice warning">公開前に確定する必要があります．</p></section>
+  </main>
+  <footer class="site-footer">
+    <p>スナップショット: local-preview-pdf-dialog．カタログの有効期間は各データレコードに記載されています．</p>
+  </footer>
+  <dialog class="pdf-dialog" data-pdf-dialog aria-labelledby="pdf-dialog-title">
+    <div class="pdf-dialog__panel">
+      <div class="pdf-dialog__header">
+        <div>
+          <p class="eyebrow">資料プレビュー</p>
+          <h2 id="pdf-dialog-title" data-pdf-dialog-title>PDFプレビュー</h2>
+        </div>
+        <button class="pdf-dialog__close" type="button" data-pdf-dialog-close aria-label="PDFプレビューを閉じる">×</button>
+      </div>
+      <p class="pdf-dialog__help">下にPDFが表示されない場合は，別タブで開いてください．</p>
+      <div class="pdf-dialog__viewer">
+        <button class="pdf-dialog__nav pdf-dialog__nav--previous" type="button" data-pdf-dialog-previous aria-label="前の観測点" title="前の観測点" hidden><span aria-hidden="true">←</span></button>
+        <iframe class="pdf-dialog__frame" data-pdf-dialog-frame title="PDFプレビュー"></iframe>
+        <button class="pdf-dialog__nav pdf-dialog__nav--next" type="button" data-pdf-dialog-next aria-label="次の観測点" title="次の観測点" hidden><span aria-hidden="true">→</span></button>
+      </div>
+      <div class="pdf-dialog__actions">
+        <span class="pdf-dialog__position" data-pdf-dialog-position aria-live="polite" hidden></span>
+        <a class="button" data-pdf-dialog-open target="_blank" rel="noopener">別タブで開く</a>
+        <a class="button secondary" data-pdf-dialog-download download>PDFをダウンロード</a>
+        <button class="button secondary" type="button" data-pdf-dialog-close>プレビューを閉じる</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>

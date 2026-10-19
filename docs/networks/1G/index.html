@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Network 1G | Station Orientation Catalog</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <script src="../../js/catalog.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="../../index.html">Station Orientation Catalog</a>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../maps/index.html">Annual maps</a></li>
+          <li><a href="../index.html">Networks</a></li>
+          <li><a href="../../about/index.html">About</a></li>
+        </ul>
+      </nav>
+      <nav class="language-tabs" aria-label="Language">
+        <a lang="en" hreflang="en" href="index.html" aria-current="page">English</a>
+        <a lang="ja" hreflang="ja" href="../../ja/networks/1G/index.html">日本語</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" tabindex="-1">
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../../index.html">Home</a></li><li><a href="../index.html">Networks</a></li><li aria-current="page">1G</li></ol></nav>
+  <header class="page-header"><p class="eyebrow">Temporary network</p><h1>1G</h1><p>2 stations; 2 final station PDFs; 2 station CSVs; 2 PDFs without screening.</p></header>
+  <div class="download-panel">
+  <div><p class="eyebrow">Network download</p><h2>Complete network CSV</h2><p>2/2 station CSVs; 2 data rows.</p></div>
+  <a class="button" href="../../catalogs/networks/1G.csv" download>Download 1G network CSV</a>
+</div>
+  <section aria-labelledby="station-list-heading">
+    <div class="section-heading"><div><h2 id="station-list-heading">Stations</h2><p>All detected station directories are listed, including stations with missing public files. Values beside station codes show the median orientation correction ± one standard deviation, in degrees; the number in parentheses is the number of events used.</p></div></div>
+    <label for="station-filter">Filter station code</label>
+    <input class="search-input" id="station-filter" type="search" data-filter-input data-filter-target="#station-table-body" autocomplete="off">
+    <button class="text-button" type="button" data-sort-table="#station-table-body">Sort station codes</button>
+    <div class="table-wrap"><table>
+      <caption>2 stations in network 1G</caption>
+      <thead><tr><th scope="col">Station code</th><th scope="col">Final PDF</th><th scope="col">Station CSV</th><th scope="col">PDF without screening</th></tr></thead>
+      <tbody id="station-table-body"><tr data-search-item data-search="LEGO 1G.LEGO">
+  <th scope="row" data-sort-value="LEGO"><div class="station-result-line"><a href="../../stations/1G.LEGO/index.html">LEGO</a><span class="orientation-inline"><span class="orientation-value" aria-label="Orientation correction -0.4 degrees plus or minus 14.8 degrees, based on 6 events">-0.4 ± 14.8° <span class="orientation-event-count">(6)</span></span></span></div></th>
+  <td><a data-pdf-preview-link data-pdf-station="1G.LEGO" data-pdf-label="1G.LEGO summary PDF" href="../../assets/stations/1G/1G.LEGO.pdf" target="_blank" rel="noopener">Preview 1G.LEGO PDF</a></td><td><a href="../../assets/stations/1G/1G.LEGO.summary.csv" download>Download 1G.LEGO CSV</a></td><td><a data-pdf-preview-link data-pdf-variant="unscreened" data-pdf-station="1G.LEGO" data-pdf-label="1G.LEGO summary PDF without screening" href="../../assets/stations/1G/1G.LEGO.unscreened.pdf" target="_blank" rel="noopener">Preview without screening</a></td>
+</tr><tr data-search-item data-search="NOMU 1G.NOMU">
+  <th scope="row" data-sort-value="NOMU"><div class="station-result-line"><a href="../../stations/1G.NOMU/index.html">NOMU</a><span class="orientation-inline"><span class="orientation-value" aria-label="Orientation correction 4.0 degrees plus or minus 15.3 degrees, based on 5 events">4.0 ± 15.3° <span class="orientation-event-count">(5)</span></span></span></div></th>
+  <td><a data-pdf-preview-link data-pdf-station="1G.NOMU" data-pdf-label="1G.NOMU summary PDF" href="../../assets/stations/1G/1G.NOMU.pdf" target="_blank" rel="noopener">Preview 1G.NOMU PDF</a></td><td><a href="../../assets/stations/1G/1G.NOMU.summary.csv" download>Download 1G.NOMU CSV</a></td><td><a data-pdf-preview-link data-pdf-variant="unscreened" data-pdf-station="1G.NOMU" data-pdf-label="1G.NOMU summary PDF without screening" href="../../assets/stations/1G/1G.NOMU.unscreened.pdf" target="_blank" rel="noopener">Preview without screening</a></td>
+</tr></tbody>
+    </table></div>
+  </section>
+  <script type="application/json" data-pdf-station-sequence="corrected">[{"station":"1G.LEGO","label":"1G.LEGO summary PDF","url":"../../assets/stations/1G/1G.LEGO.pdf"},{"station":"1G.NOMU","label":"1G.NOMU summary PDF","url":"../../assets/stations/1G/1G.NOMU.pdf"}]</script><script type="application/json" data-pdf-station-sequence="unscreened">[{"station":"1G.LEGO","label":"1G.LEGO summary PDF without screening","url":"../../assets/stations/1G/1G.LEGO.unscreened.pdf"},{"station":"1G.NOMU","label":"1G.NOMU summary PDF without screening","url":"../../assets/stations/1G/1G.NOMU.unscreened.pdf"}]</script>
+  </main>
+  <footer class="site-footer">
+    <p>Snapshot: local-preview-pdf-dialog. Catalog validity dates are shown in the data records.</p>
+  </footer>
+  <dialog class="pdf-dialog" data-pdf-dialog aria-labelledby="pdf-dialog-title">
+    <div class="pdf-dialog__panel">
+      <div class="pdf-dialog__header">
+        <div>
+          <p class="eyebrow">Document preview</p>
+          <h2 id="pdf-dialog-title" data-pdf-dialog-title>PDF preview</h2>
+        </div>
+        <button class="pdf-dialog__close" type="button" data-pdf-dialog-close aria-label="Close PDF preview">×</button>
+      </div>
+      <p class="pdf-dialog__help">If the PDF does not appear below, open it in a separate tab.</p>
+      <div class="pdf-dialog__viewer">
+        <button class="pdf-dialog__nav pdf-dialog__nav--previous" type="button" data-pdf-dialog-previous aria-label="Previous station" title="Previous station" hidden><span aria-hidden="true">←</span></button>
+        <iframe class="pdf-dialog__frame" data-pdf-dialog-frame title="PDF preview"></iframe>
+        <button class="pdf-dialog__nav pdf-dialog__nav--next" type="button" data-pdf-dialog-next aria-label="Next station" title="Next station" hidden><span aria-hidden="true">→</span></button>
+      </div>
+      <div class="pdf-dialog__actions">
+        <span class="pdf-dialog__position" data-pdf-dialog-position aria-live="polite" hidden></span>
+        <a class="button" data-pdf-dialog-open target="_blank" rel="noopener">Open in a separate tab</a>
+        <a class="button secondary" data-pdf-dialog-download download>Download PDF</a>
+        <button class="button secondary" type="button" data-pdf-dialog-close>Close preview</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>

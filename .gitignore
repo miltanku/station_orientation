@@ -1,0 +1,23 @@
+# Public-repository allowlist
+#
+# Keep local observations, processing code, intermediate products, reports,
+# notebooks, SAGE metadata, and previous site snapshots out of Git history.
+# Only the repository documentation and the generated GitHub Pages tree are
+# intentionally publishable.
+/*
+
+!/.gitignore
+!/README.md
+!/docs/
+!/docs/**
+
+# Local/editor metadata and Python files inside the public tree must remain
+# private even if they are accidentally copied there later.
+docs/.DS_Store
+docs/**/.DS_Store
+docs/__pycache__/
+docs/**/__pycache__/
+docs/*.py
+docs/*.py[cod]
+docs/**/*.py
+docs/**/*.py[cod]
